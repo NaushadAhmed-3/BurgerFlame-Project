@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+     <header class="header">
+        <div class="logo">
+            <i class="fas fa-hamburger" style="color: #e67e22; font-size: 24px;"></i>
+            <span style="font-size: 24px; font-weight: bold; color: white; margin-left: 10px;">
+                BURGER<span style="color: #e67e22;">FL🔥ME</span>
+            </span>
+        </div>
+        
+        <nav class="navbar">
+            <a href="index.html" class="nav-btn active">Home</a>
+            <a href="menu.html" class="nav-btn">Menu</a>
+            <a href="about.html" class="nav-btn">About</a>
+            <a href="contact.html" class="nav-btn">Contact</a>
+            <a href="Login.html" class="nav-btn">Sign Up</a>
+        </nav>
+        
+        <button class="order-btn" onclick="showCart()">
+            <i class="fas fa-shopping-cart"></i>
+            Cart (<span id="cartCount">0</span>)
+        </button>
+    </header>
+    
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Our Story</h3>
+                <p>Burger Flame was founded in 2025 with a simple mission: to serve the best flame-grilled burgers using fresh, quality ingredients.</p>
+                <p>We believe in real flame grilling for authentic smoky flavor that you can taste in every bite.</p>
+                
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-fire"></i>
+                        <h4>Flame-Grilled</h4>
+                        <p>Real fire for real flavor</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-leaf"></i>
+                        <h4>Fresh Ingredients</h4>
+                        <p>Never frozen, always fresh</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-award"></i>
+                        <h4>Quality Guaranteed</h4>
+                        <p>Best burgers in town</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Our Kitchen">
+            </div>
+        </div>
+    </section>
+        <!-- Shopping Cart -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Order</h3>
+            <button class="close-cart" onclick="hideCart()">&times;</button>
+        </div>
+        
+        <div class="cart-items">
+            <!-- Cart items will appear here -->
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="totalPrice">Rs.0</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Burger Flame. All rights reserved.</p>
+        <p>Made with <i class="fas fa-heart" style="color: red;"></i> for burger lovers</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Burger Flame</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- 1. GLOBAL DARK ORANGE THEME --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a; /* Dark Charcoal Background */
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: white; 
+        }
+
+        /* --- 2. NAVBAR  --- */
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #000; /* Pure Black Header */
+            border-bottom: 2px solid #e67e22; /* ORANGE accent line */
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            white-space: nowrap; 
+            transition: color 0.3s;
+        }
+
+        .nav-btn:hover {
+            color: #e67e22; /* Orange on hover */
+        }
+
+        .order-btn {
+            background-color: #e67e22; /* ORANGE Button */
+            color: white; /* White text looks better on dark orange */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            white-space: nowrap;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .order-btn:hover {
+            background-color: #d35400; /* Darker Orange hover */
+        }
+
+        /* --- 3. FORM CONTAINER --- */
+        .form-container {
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            
+            /* Dark Card Style */
+            background-color: #222; 
+            border: 2px solid #e67e22; /* ORANGE Border */
+            
+            padding: 40px;
+            border-radius: 10px;
+            /* Stronger Orange Neon Glow */
+            box-shadow: 0 0 25px rgba(230, 126, 34, 0.4); 
+            width: 350px;
+            margin-top: 50px; 
+        }
+
+        h2 {
+            text-align: center;
+            color: white; 
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            width: 100%; 
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ccc; 
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            background-color: #333; 
+            border: 1px solid #555;
+            color: white; 
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #e67e22; /* Orange border when typing */
+            box-shadow: 0 0 8px rgba(230, 126, 34, 0.5); /* Adds glow to input */
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #e67e22; /* ORANGE Button */
+            color: white; 
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #d35400; /* Darker Orange hover */
+        }
+
+        .error-message {
+            color: #ff4757; /* Keep errors red */
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .success-message {
+            color: green; /* Success message in Green */
+            text-align: center;
+            font-weight: bold;
+            margin-top: 15px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!-- HEADER SECTION -->
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-hamburger" style="color: #e67e22; font-size: 24px;"></i>
+            <span style="font-size: 24px; font-weight: bold; color: white; margin-left: 10px;">
+                BURGER<span style="color: #e67e22;">FL🔥ME</span>
+            </span>
+        </div>
+        
+        <nav class="navbar">
+            <a href="index.html" class="nav-btn">Home</a>
+            <a href="menu.html" class="nav-btn">Menu</a>
+            <a href="about.html" class="nav-btn">About</a>
+            <a href="contact.html" class="nav-btn">Contact</a>
+            <a href="Login.html" class="nav-btn" style="color: #e67e22;">Sign Up</a>
+        </nav>
+        
+        <button class="order-btn" onclick="showCart()">
+            <i class="fas fa-shopping-cart"></i>
+            Cart (<span id="cartCount">0</span>)
+        </button>
+    </header>
+<!-- FORM SECTION -->
+    <div class="form-container">
+        <h2>Sign Up</h2>
+        <form id="registerForm" style="width: 100%;">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your name">
+                <small class="error-message" id="nameError">Username is required</small>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email">
+                <small class="error-message" id="emailError">Valid email is required</small>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Create a password">
+                <small class="error-message" id="passError">Password must be 6+ chars</small>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Repeat password">
+                <small class="error-message" id="matchError">Passwords do not match</small>
+            </div>
+
+            <button type="submit">Register</button>
+            <div class="success-message" id="successMsg">Registration Successful!</div>
+        </form>
+    </div>
+<!-- INTERNAL JAVA SCRIPT FOR FORM -->
+    <script>
+        const form = document.getElementById('registerForm');
+        
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            const nameError = document.getElementById('nameError');
+            const emailError = document.getElementById('emailError');
+            const passError = document.getElementById('passError');
+            const matchError = document.getElementById('matchError');
+            const successMsg = document.getElementById('successMsg');
+
+            let isValid = true;
+            document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
+            successMsg.style.display = 'none';
+
+            if (username === "") {
+                nameError.style.display = 'block';
+                isValid = false;
+            }
+
+            if (email === "" || !email.includes('@')) {
+                emailError.style.display = 'block';
+                isValid = false;
+            }
+
+            if (password.length < 6) {
+                passError.style.display = 'block';
+                isValid = false;
+            }
+
+            if (password !== confirmPassword) {
+                matchError.style.display = 'block';
+                isValid = false;
+            }
+
+            if (isValid) {
+                successMsg.style.display = 'block';
+                console.log("Form Submitted", { username, email });
+                form.reset(); 
+            }
+        });
+
+        // Dummy function for cart if script.js is missing
+        function showCart() {
+            console.log("Cart clicked");
+        }
+    </script>
+    <script src="script.js"></script>
+
+</body>
+</html>

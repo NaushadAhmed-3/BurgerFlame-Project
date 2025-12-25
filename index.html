@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Flame - Best Burgers in Town</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-hamburger" style="color: #e67e22; font-size: 24px;"></i>
+            <span style="font-size: 24px; font-weight: bold; color: white; margin-left: 10px;">
+                BURGER<span style="color: #e67e22;">FL🔥ME</span>
+            </span>
+        </div>
+        
+        <nav class="navbar">
+            <a href="index.html" class="nav-btn active">Home</a>
+            <a href="menu.html" class="nav-btn">Menu</a>
+            <a href="about.html" class="nav-btn">About</a>
+            <a href="contact.html" class="nav-btn">Contact</a>
+            <a href="Login.html" class="nav-btn">Sign Up</a>
+        </nav>
+        
+        <button class="order-btn" onclick="showCart()">
+            <i class="fas fa-shopping-cart"></i>
+            Cart (<span id="cartCount">0</span>)
+        </button>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <div class="hero">
+            <div class="hero-text">
+                <h2>Best Flame-Grilled Burgers</h2>
+                <p>Made with 100% fresh ingredients & real flame grilling</p>
+                
+                <!-- Discount Timer -->
+                <div class="discount-box">
+                    <h3>🔥 SPECIAL OFFER 🔥</h3>
+                    <p>30% OFF on all burgers</p>
+                    <p>Limited time offer:</p>
+                    <div class="timer">
+                        <div class="time-box">
+                            <span id="hours">02</span>
+                            <small>Hours</small>
+                        </div>
+                        <div class="time-box">
+                            <span id="minutes">30</span>
+                            <small>Minutes</small>
+                        </div>
+                        <div class="time-box">
+                            <span id="seconds">45</span>
+                            <small>Seconds</small>
+                        </div>
+                    </div>
+                    <a href="https://youtu.be/dRV6NaciZVk?si=WU8gm8nh53IIRDev&autoplay=1" class="your-button-class">Order Now & Save</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="Pictures/Classic Burger.png" alt="Delicious Burger">
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Order</h3>
+            <button class="close-cart" onclick="hideCart()">&times;</button>
+        </div>
+        
+        <div class="cart-items">
+            <!-- Cart items will appear here -->
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="totalPrice">Rs.0</span>
+            </div>
+           <button class="checkout-btn" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Burger Flame. All rights reserved.</p>
+        <p>Made with <i class="fas fa-heart" style="color: red;"></i> for burger lovers</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

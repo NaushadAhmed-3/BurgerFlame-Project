@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+ <header class="header">
+        <div class="logo">
+            <i class="fas fa-hamburger" style="color: #e67e22; font-size: 24px;"></i>
+            <span style="font-size: 24px; font-weight: bold; color: white; margin-left: 10px;">
+                BURGER<span style="color: #e67e22;">FL🔥ME</span>
+        </div>
+    </div>
+        <nav class="navbar">
+            <a href="index.html" class="nav-btn active">Home</a>
+            <a href="menu.html" class="nav-btn">Menu</a>
+            <a href="about.html" class="nav-btn">About</a>
+            <a href="contact.html" class="nav-btn">Contact</a>
+            <a href="Login.html" class="nav-btn">Sign Up</a>
+        </nav>
+        
+        <button class="order-btn" onclick="showCart()">
+            <i class="fas fa-shopping-cart"></i>
+            Cart (<span id="cartCount">0</span>)
+        </button>
+    </header>
+        <!-- Menu Section -->
+    <section id="menu" class="section">
+        <h2 class="section-title">Our Menu</h2>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterCategory('deals')"> Hot Deals</button>
+            <button class="filter-btn" onclick="filterCategory('beef')">Beef Burgers</button>
+            <button class="filter-btn" onclick="filterCategory('chicken')">Chicken Burgers</button>
+            <button class="filter-btn" onclick="filterCategory('sides')">Sides & Drinks</button>
+        </div>
+        
+        <!-- Burger Items with Flip Cards -->
+        <div class="menu-grid">
+            <!-- Deals Items -->
+            <div class="menu-item deals">
+    <div class="flip-card" onclick="flipCard(this)">
+        <div class="flip-front">
+            <img src="Pictures/Super Saver combo.png" alt="Super Combo">
+            <div class="item-info">
+                <h3> Super Saver Combo</h3>
+                <p>Zinger Burger + Fries + Coke</p>
+                <div class="price">Rs.800</div>
+            </div>
+        </div>
+        <div class="flip-back">
+            <h3>Super Saver Combo</h3>
+            <p>The ultimate meal! Get our famous Zinger Burger served with a medium portion of golden fries and a chilled soft drink.</p>
+            <table class="nutrition">
+                <tr><th>Item name</th><td>Quantity</td></tr>
+                <tr><th>Zinger Burger</th><td>1</td></tr>
+                 <tr><th>French Fries</th><td>1</td></tr>
+                  <tr><th>Drink</th><td>1</td></tr>
+            </table>
+            <button class="add-cart-btn" onclick="addToCart('Super Saver Combo', 800)">Add Deal to Cart</button>
+        </div>
+    </div>
+</div>
+            <div class="menu-item deals">
+    <div class="flip-card" onclick="flipCard(this)">
+        <div class="flip-front">
+            <img src="Pictures/Duo Deal.png" alt="Duo Deal">
+            <div class="item-info">
+                <h3> Duo Deal</h3>
+                <p> 2 Zinger Burgers + 2 Fries +2 Coke</p>
+                <div class="price">Rs.1550</div>
+            </div>
+        </div>
+        <div class="flip-back">
+            <h3>Duo Deal </h3>
+            <p>The ultimate Duo Deal! Get two Zinger Burgers with two medium fries and two soft Drinks.</p>
+            <table class="nutrition">
+                <tr><th>Item name</th><td>Quantity</td></tr>
+                <tr><th>Zinger Burger</th><td>2</td></tr>
+                 <tr><th>Medium French Fries</th><td>2</td></tr>
+                  <tr><th>Drinks</th><td>2</td></tr>
+            </table>
+            <button class="add-cart-btn" onclick="addToCart('Duo Deal', 1550)">Add Deal to Cart</button>
+        </div>
+    </div>
+</div>
+
+<div class="menu-item deals">
+    <div class="flip-card" onclick="flipCard(this)">
+        <div class="flip-front">
+            <img src="Pictures/Family fest.png" alt="Family Festival">
+            <div class="item-info">
+                <h3>Family Festival</h3>
+                <p> 4 Burgers 2 Large Fries and 4 Drinks</p>
+                <div class="price">Rs.3400</div>
+            </div>
+        </div>
+        <div class="flip-back">
+            <h3>Family Feast</h3>
+            <p>Perfect for sharing! 2 Zinger burgers, 1 Barbeque Beef Burger, 1 Classic beef burger, 2 Large Fries, 4 Cold Drinks</p>
+             <table class="nutrition">
+                <tr><th>Item name</th><td>Quantity</td></tr>
+                <tr><th>Burgers</th><td>4</td></tr>
+                 <tr><th>Large French Fries</th><td>2</td></tr>
+                  <tr><th>Drinks</th><td>4</td></tr>
+            </table>
+            <button class="add-cart-btn" onclick="addToCart('Family Festival', 3400)">Add Deal to Cart</button>
+        </div>
+    </div>
+</div>
+            <!-- Classic Burger -->
+            <div class="menu-item beef">
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-front">
+                        <img src="Pictures/Classic Burger.png" alt="Classic Burger">
+                        <div class="item-info">
+                            <h3>Classic Burger</h3>
+                            <p>Beef, cheese, lettuce, tomato</p>
+                            <div class="price">Rs.600</div>
+                        </div>
+                    </div>
+                    <div class="flip-back">
+                        <h3>Classic Burger</h3>
+                        <p>200g beef patty with cheddar cheese, fresh lettuce, tomato and special sauce.</p>
+                        <table class="nutrition">
+                            <tr><th>Calories</th><td>650</td></tr>
+                            <tr><th>Protein</th><td>48g</td></tr>
+                            <tr><th>Carbs</th><td>45g</td></tr>
+                        </table>
+                        <button class="add-cart-btn" onclick="addToCart('Classic Burger', 600)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Spicy Burger -->
+            <div class="menu-item beef">
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-front">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Spicy Burger">
+                        <div class="item-info">
+                            <h3>Spicy Burger</h3>
+                            <p>Double patty, jalapeños, spicy sauce</p>
+                            <div class="price">Rs.800</div>
+                        </div>
+                    </div>
+                    <div class="flip-back">
+                        <h3>Spicy Burger</h3>
+                        <p>Double beef patties with jalapeños, pepper jack cheese, and spicy chipotle mayo.</p>
+                        <table class="nutrition">
+                            <tr><th>Calories</th><td>750</td></tr>
+                            <tr><th>Protein</th><td>54g</td></tr>
+                            <tr><th>Carbs</th><td>52g</td></tr>
+                        </table>
+                        <button class="add-cart-btn" onclick="addToCart('Spicy Burger', 800)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chicken Burger -->
+            <div class="menu-item chicken">
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-front">
+                        <img src="https://media.istockphoto.com/id/478486992/photo/sandwich-with-chicken-burger-tomatoes-cheese-and-lettuce.jpg?s=612x612&w=0&k=20&c=-1UjaEZ14xOWgcyKi8RHllrb4_-gusNN_mFRHbWMmH8=" alt="Chicken Burger">
+                        <div class="item-info">
+                            <h3> Grilled Chicken Burger</h3>
+                            <p>Crispy chicken, lettuce, tomato,onion,mayo,cheese</p>
+                            <div class="price">Rs.400</div>
+                        </div>
+                    </div>
+                    <div class="flip-back">
+                        <h3> Grilled chicken Burger</h3>
+                        <p>Grilled chicken breast with lettuce, tomato,onion,cheese and creamy mayo.</p>
+                        <table class="nutrition">
+                            <tr><th>Calories</th><td>420</td></tr>
+                            <tr><th>Protein</th><td>20g</td></tr>
+                            <tr><th>Carbs</th><td>42g</td></tr>
+                        </table>
+                        <button class="add-cart-btn" onclick="addToCart('Chicken Burger', 400)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Zinger Burger -->
+            <div class="menu-item chicken">
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-front">
+                        <img src="https://fillicafepk.com/wp-content/uploads/2023/12/zinger-burgerpsd-450x450.jpg" alt="Chicken Burger">
+                        <div class="item-info">
+                            <h3> Zinger Burger</h3>
+                            <p>Crispy fried chicken, lettuce,mayo</p>
+                            <div class="price">Rs.500</div>
+                        </div>
+                    </div>
+                    <div class="flip-back">
+                        <h3> Zinger Burger</h3>
+                        <p>Crispy fried chicken with lettuce,cheese and creamy mayo.</p>
+                        <table class="nutrition">
+                            <tr><th>Calories</th><td>520</td></tr>
+                            <tr><th>Protein</th><td>30g</td></tr>
+                            <tr><th>Carbs</th><td>42g</td></tr>
+                        </table>
+                        <button class="add-cart-btn" onclick="addToCart('Zinger Burger', 500)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- BBQ Burger -->
+            <div class="menu-item beef">
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-front">
+                        <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="BBQ Burger">
+                        <div class="item-info">
+                            <h3>BBQ Burger</h3>
+                            <p>Beef,turkey bacon, BBQ sauce, onion rings</p>
+                            <div class="price">Rs900</div>
+                        </div>
+                    </div>
+                    <div class="flip-back">
+                        <h3>BBQ Burger</h3>
+                        <p>Angus beef with crispy turkey bacon, cheddar cheese, and homemade BBQ sauce.</p>
+                        <table class="nutrition">
+                            <tr><th>Calories</th><td>720</td></tr>
+                            <tr><th>Protein</th><td>60g</td></tr>
+                            <tr><th>Carbs</th><td>48g</td></tr>
+                        </table>
+                        <button class="add-cart-btn" onclick="addToCart('BBQ Burger', 900)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- French Fries -->
+            <div class="menu-item sides">
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-front">
+                        <img src="Pictures/French fries.png" alt="French Fries">
+                        <div class="item-info">
+                            <h3>French Fries</h3>
+                            <p>Crispy golden fries</p>
+                            <div class="price">Select Size</div>
+                        </div>
+                    </div>
+  <div class="flip-back">
+    <h3>French Fries</h3>
+    <p>Crispy golden fries seasoned with special spices.</p>
+    
+    <select id="friesSize" class="size-selector" onclick="event.stopPropagation()">
+        <option value="Small" data-price="200">Small - Rs. 200</option>
+        <option value="Medium" data-price="300">Medium - Rs. 300</option>
+        <option value="Large" data-price="400">Large - Rs. 400</option>
+    </select>
+
+    <button class="add-cart-btn" onclick="addFriesToCart()">Add to Cart</button>
+</div>
+        </div>
+            </div>    
+            <!-- Animal Loaded Fries -->
+            <div class="menu-item sides">
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-front">
+                        <img src="Pictures/Animal style fries.png" alt="Animal style Fries">
+                        <div class="item-info">
+                            <h3>Animal Loaded Fries</h3>
+                            <p>Crispy golden fries toppped with Chicken and sauce</p>
+                            <div class="price">Select Size</div>
+                        </div>
+                    </div>
+  <div class="flip-back">
+    <h3>Animal Fries</h3>
+    <p>Crispy golden fries seasoned with special spices topped with Chicken and Special Sauses.</p>
+    
+    <select id="AnimalfriesSize" class="size-selector" onclick="event.stopPropagation()">
+        <option value="Small" data-price="400">Small - Rs. 400</option>
+        <option value="Medium" data-price="500">Medium - Rs. 500</option>
+        <option value="Large" data-price="650">Large - Rs. 650</option>
+    </select>
+
+    <button class="add-cart-btn" onclick="addAnimalFriesToCart()">Add to Cart</button>
+</div>
+        </div>
+            </div>    
+            <!-- Soft Drink -->
+<div class="menu-item sides">
+    <div class="flip-card" onclick="flipCard(this)">
+        <div class="flip-front">
+            <img src="https://cbx-prod.b-cdn.net/COLOURBOX49487596.jpg?width=800&height=800&quality=70" alt="Soft Drink">
+            <div class="item-info">
+                <h3>Soft Drink</h3>
+                <p>Refreshing Drink</p>
+                <div class="price">Select the drink</div>
+            </div>
+        </div>
+        <div class="flip-back">
+            <h3>Soft Drink</h3>
+            <p>Choose your favorite flavor and size.</p>
+            
+            <select id="drinkFlavor" class="size-selector" onclick="event.stopPropagation()">
+                <option value="Coke">Coke</option>
+                <option value="Sprite">Sprite</option>
+                <option value="Fanta">Fanta</option>
+            </select>
+
+            <select id="drinkSize" class="size-selector" onclick="event.stopPropagation()">
+                <option value="Regular" data-price="100">Regular - Rs. 100</option>
+                <option value="Litre" data-price="200">1 Litre - Rs. 200</option>
+                <option value="1.5 Litre" data-price="250">1.5 Litre - Rs. 250</option>
+            </select>
+
+            <button class="add-cart-btn" onclick="addCustomDrinkToCart()">Add to Cart</button>
+        </div>
+    </div> </div> 
+        </div>
+    </section>
+ 
+        <!-- Shopping Cart -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Order</h3>
+            <button class="close-cart" onclick="hideCart()">&times;</button>
+        </div>
+        
+        <div class="cart-items">
+            <!-- Cart items will appear here -->
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="totalPrice">Rs.0</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Burger Flame. All rights reserved.</p>
+        <p>Made with <i class="fas fa-heart" style="color: red;"></i> for burger lovers</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

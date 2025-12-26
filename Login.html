@@ -148,31 +148,32 @@
             margin-top: 15px;
             display: none;
         }
+        .btn {
+    position: absolute;  
+    top: 20px;        
+    left: 20px;       
+    z-index: 100;       
+}
+
+.btn button {
+      width: 100%;
+            padding: 12px;
+            background-color: #e67e22; /* ORANGE Button */
+            color: white; 
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+            font-weight: bold;   
+}
+.btn button:hover{
+    background-color: #d35400;
+}
     </style>
 </head>
 <body>
-<!-- HEADER SECTION -->
-    <header class="header">
-        <div class="logo">
-            <i class="fas fa-hamburger" style="color: #e67e22; font-size: 24px;"></i>
-            <span style="font-size: 24px; font-weight: bold; color: white; margin-left: 10px;">
-                BURGER<span style="color: #e67e22;">FL🔥ME</span>
-            </span>
-        </div>
-        
-        <nav class="navbar">
-            <a href="index.html" class="nav-btn">Home</a>
-            <a href="menu.html" class="nav-btn">Menu</a>
-            <a href="about.html" class="nav-btn">About</a>
-            <a href="contact.html" class="nav-btn">Contact</a>
-            <a href="Login.html" class="nav-btn" style="color: #e67e22;">Sign Up</a>
-        </nav>
-        
-        <button class="order-btn" onclick="showCart()">
-            <i class="fas fa-shopping-cart"></i>
-            Cart (<span id="cartCount">0</span>)
-        </button>
-    </header>
 <!-- FORM SECTION -->
     <div class="form-container">
         <h2>Sign Up</h2>
@@ -204,6 +205,11 @@
             <button type="submit">Register</button>
             <div class="success-message" id="successMsg">Registration Successful!</div>
         </form>
+         <div class="btn">
+            <a href="index.html" style="text-decoration: none;">
+                <button style="width: auto; padding: 10px 30px;">&lt; Return Home</button>
+            </a>
+        </div>
     </div>
 <!-- INTERNAL JAVA SCRIPT FOR FORM -->
     <script>

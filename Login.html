@@ -8,147 +8,151 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* --- 1. GLOBAL DARK ORANGE THEME --- */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #1a1a1a; /* Dark Charcoal Background */
-            display: flex;
-            flex-direction: column; 
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            color: white; 
-        }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4; /* Light Gray Background */
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333333; /* Dark Text */
+}
 
-        /* --- 2. NAVBAR  --- */
-        .header {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            background-color: #000; /* Pure Black Header */
-            border-bottom: 2px solid #e67e22; /* ORANGE accent line */
-            box-sizing: border-box;
-        }
+/* --- 2. NAVBAR  --- */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #ffffff; /* Pure White Header */
+    border-bottom: 2px solid #e67e22; /* ORANGE accent line */
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow */
+}
 
-        .navbar {
-            display: flex;
-            gap: 15px;
-        }
+.navbar {
+    display: flex;
+    gap: 15px;
+}
 
-        .nav-btn {
-            text-decoration: none;
-            color: white;
-            font-weight: 500;
-            white-space: nowrap; 
-            transition: color 0.3s;
-        }
+.nav-btn {
+    text-decoration: none;
+    color: #333333; /* Dark Text */
+    font-weight: 500;
+    white-space: nowrap; 
+    transition: color 0.3s;
+}
 
-        .nav-btn:hover {
-            color: #e67e22; /* Orange on hover */
-        }
+.nav-btn:hover {
+    color: #e67e22; /* Orange on hover */
+}
 
-        .order-btn {
-            background-color: #e67e22; /* ORANGE Button */
-            color: white; /* White text looks better on dark orange */
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            white-space: nowrap;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
+.order-btn {
+    background-color: #e67e22; /* ORANGE Button */
+    color: white; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-weight: bold;
+    transition: background 0.3s;
+}
 
-        .order-btn:hover {
-            background-color: #d35400; /* Darker Orange hover */
-        }
+.order-btn:hover {
+    background-color: #d35400; /* Darker Orange hover */
+}
 
-        /* --- 3. FORM CONTAINER --- */
-        .form-container {
-            display: flex;
-            flex-direction: column; 
-            justify-content: center;
-            align-items: center;
-            
-            /* Dark Card Style */
-            background-color: #222; 
-            border: 2px solid #e67e22; /* ORANGE Border */
-            
-            padding: 40px;
-            border-radius: 10px;
-            /* Stronger Orange Neon Glow */
-            box-shadow: 0 0 25px rgba(230, 126, 34, 0.4); 
-            width: 350px;
-            margin-top: 50px; 
-        }
+/* --- 3. FORM CONTAINER --- */
+.form-container {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    
+    /* White Card Style */
+    background-color: #ffffff; 
+    border: 2px solid #e67e22; /* ORANGE Border */
+    
+    padding: 40px;
+    border-radius: 10px;
+    /* Softer Orange Shadow for light theme */
+    box-shadow: 0 5px 25px rgba(230, 126, 34, 0.15); 
+    width: 350px;
+    margin-top: 50px; 
+}
 
-        h2 {
-            text-align: center;
-            color: white; 
-            margin-bottom: 20px;
-        }
+h2 {
+    text-align: center;
+    color: #e67e22; /* Orange Title */
+    margin-bottom: 20px;
+}
 
-        .form-group {
-            margin-bottom: 15px;
-            width: 100%; 
-        }
+.form-group {
+    margin-bottom: 15px;
+    width: 100%; 
+}
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: #ccc; 
-        }
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555555; /* Medium Gray for labels */
+    font-weight: 500;
+}
 
-        input {
-            width: 100%;
-            padding: 10px;
-            background-color: #333; 
-            border: 1px solid #555;
-            color: white; 
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
+input {
+    width: 100%;
+    padding: 10px;
+    background-color: #f9f9f9; /* Very light gray input background */
+    border: 1px solid #cccccc; /* Light gray border */
+    color: #333333; /* Dark text inside input */
+    border-radius: 5px;
+    box-sizing: border-box;
+}
 
-        input:focus {
-            outline: none;
-            border-color: #e67e22; /* Orange border when typing */
-            box-shadow: 0 0 8px rgba(230, 126, 34, 0.5); /* Adds glow to input */
-        }
+input:focus {
+    outline: none;
+    background-color: #ffffff;
+    border-color: #e67e22; /* Orange border when typing */
+    box-shadow: 0 0 8px rgba(230, 126, 34, 0.3); /* Adds soft glow */
+}
 
-        button[type="submit"] {
-            width: 100%;
-            padding: 12px;
-            background-color: #e67e22; /* ORANGE Button */
-            color: white; 
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background 0.3s;
-            margin-top: 10px;
-            font-weight: bold;
-        }
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #e67e22; /* ORANGE Button */
+    color: white; 
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+    font-weight: bold;
+}
 
-        button[type="submit"]:hover {
-            background-color: #d35400; /* Darker Orange hover */
-        }
+button[type="submit"]:hover {
+    background-color: #d35400; /* Darker Orange hover */
+}
 
-        .error-message {
-            color: #ff4757; /* Keep errors red */
-            font-size: 14px;
-            margin-top: 5px;
-            display: none;
-        }
+.error-message {
+    color: #ff4757; /* Keep errors red */
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
 
-        .success-message {
-            color: green; /* Success message in Green */
-            text-align: center;
-            font-weight: bold;
-            margin-top: 15px;
-            display: none;
-        }
-        .btn {
+.success-message {
+    color: #27ae60; /* Slightly darker green for visibility on white */
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+    display: none;
+}
+
+.btn {
     position: absolute;  
     top: 20px;        
     left: 20px;       
@@ -156,18 +160,19 @@
 }
 
 .btn button {
-      width: 100%;
-            padding: 12px;
-            background-color: #e67e22; /* ORANGE Button */
-            color: white; 
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background 0.3s;
-            margin-top: 10px;
-            font-weight: bold;   
+    width: 100%;
+    padding: 12px;
+    background-color: #e67e22; /* ORANGE Button */
+    color: white; 
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+    font-weight: bold;   
 }
+
 .btn button:hover{
     background-color: #d35400;
 }

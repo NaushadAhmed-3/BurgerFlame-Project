@@ -12,7 +12,7 @@
  <header class="header">
         <div class="logo">
             <i class="fas fa-hamburger" style="color: #e67e22; font-size: 24px;"></i>
-            <span style="font-size: 24px; font-weight: bold; color: white; margin-left: 10px;">
+            <span style="font-size: 24px; font-weight: bold; color: black; margin-left: 10px;">
                 BURGER<span style="color: #e67e22;">FL🔥ME</span>
         </div>
     </div>
@@ -121,19 +121,27 @@
                         <div class="item-info">
                             <h3>Classic Burger</h3>
                             <p>Beef, cheese, lettuce, tomato</p>
-                            <div class="price">Rs.600</div>
+                            <div class="price">Select</div>
                         </div>
                     </div>
-                    <div class="flip-back">
-                        <h3>Classic Burger</h3>
-                        <p>200g beef patty with cheddar cheese, fresh lettuce, tomato and special sauce.</p>
-                        <table class="nutrition">
-                            <tr><th>Calories</th><td>650</td></tr>
-                            <tr><th>Protein</th><td>48g</td></tr>
-                            <tr><th>Carbs</th><td>45g</td></tr>
-                        </table>
-                        <button class="add-cart-btn" onclick="addToCart('Classic Burger', 600)">Add to Cart</button>
-                    </div>
+                   <div class="flip-back">
+    <h3>Classic Burger</h3>
+    <p>Tender Beef,Lettuce,Tomato,Cheese</p>
+    
+    <select class="size-selector patty-select" onclick="event.stopPropagation()">
+        <option value="Single Patty" data-price="600">Single patty (Rs. 600)</option>
+        <option value="Double Patty" data-price="800">Double patty (Rs. 800)</option>
+    </select>
+
+    <p>Choose combo</p>
+    <select class="size-selector combo-select"onclick="event.stopPropagation()">
+        <option value="" data-price="0">Burger Only (+0)</option>
+        <option value="+Fries" data-price="150">Add Fries (+150)</option>
+        <option value="+Fries +Drink" data-price="220">Add Fries & Drink (+220)</option>
+    </select>
+
+   <button class="add-cart-btn" onclick="addBurgerToCart(this, 'Classic Burger')">Add to Cart</button>
+</div>
                 </div>
             </div>
             
@@ -144,23 +152,60 @@
                         <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Spicy Burger">
                         <div class="item-info">
                             <h3>Spicy Burger</h3>
-                            <p>Double patty, jalapeños, spicy sauce</p>
-                            <div class="price">Rs.800</div>
+                            <p>Tender beef, jalapeños, spicy sauce</p>
+                            <div class="price">Select</div>
                         </div>
                     </div>
                     <div class="flip-back">
                         <h3>Spicy Burger</h3>
-                        <p>Double beef patties with jalapeños, pepper jack cheese, and spicy chipotle mayo.</p>
-                        <table class="nutrition">
-                            <tr><th>Calories</th><td>750</td></tr>
-                            <tr><th>Protein</th><td>54g</td></tr>
-                            <tr><th>Carbs</th><td>52g</td></tr>
-                        </table>
-                        <button class="add-cart-btn" onclick="addToCart('Spicy Burger', 800)">Add to Cart</button>
-                    </div>
+          <p>Tender Beef,jalapeños,Spicy sauce</p>
+            
+             <select class="size-selector patty-select" onclick="event.stopPropagation()">
+        <option value="Single Patty" data-price="700">Single patty (Rs. 700)</option>
+        <option value="Double Patty" data-price="900">Double patty (Rs. 900)</option>
+    </select>
+
+    <p>Choose combo</p>
+    <select class="size-selector combo-select"onclick="event.stopPropagation()">
+        <option value="" data-price="0">Burger Only (+0)</option>
+        <option value="+Fries" data-price="150">Add Fries (+150)</option>
+        <option value="+Fries +Drink" data-price="220">Add Fries & Drink (+220)</option>
+    </select>
+
+   <button class="add-cart-btn" onclick="addBurgerToCart(this, 'Spicy Burger')">Add to Cart</button>
+</div>
                 </div>
             </div>
-            
+            <!-- Smooky Burger -->
+      <div class="menu-item beef">
+    <div class="flip-card" onclick="flipCard(this)">
+        <div class="flip-front">
+            <img src="Pictures/Smooky.webp" alt="Smooky Burger">
+            <div class="item-info">
+                <h3>Smooky Burger</h3>
+                <p>Tender beef, Sauce,Crispy Onions</p>
+                <div class="price">Select</div>
+            </div>
+        </div>
+        <div class="flip-back">
+            <h3>Smooky Burger</h3>
+            <p>Smashed beef with signature Animal sauce,crispy onions,smoky BBQ sauce and melted cheddar cheese</p>
+      <select class="size-selector patty-select" onclick="event.stopPropagation()">
+        <option value="Single Patty" data-price="700">Single patty (Rs. 700)</option>
+        <option value="Double Patty" data-price="900">Double patty (Rs. 900)</option>
+    </select>
+
+    <p>Choose combo</p>
+    <select class="size-selector combo-select"onclick="event.stopPropagation()">
+        <option value="" data-price="0">Burger Only (+0)</option>
+        <option value="+Fries" data-price="150">Add Fries (+150)</option>
+        <option value="+Fries +Drink" data-price="220">Add Fries & Drink (+220)</option>
+    </select>
+
+   <button class="add-cart-btn" onclick="addBurgerToCart(this, 'Smooky Burger')">Add to Cart</button>
+</div>
+                </div>
+            </div>
             <!-- Chicken Burger -->
             <div class="menu-item chicken">
                 <div class="flip-card" onclick="flipCard(this)">
@@ -169,45 +214,88 @@
                         <div class="item-info">
                             <h3> Grilled Chicken Burger</h3>
                             <p>Crispy chicken, lettuce, tomato,onion,mayo,cheese</p>
-                            <div class="price">Rs.400</div>
+                            <div class="price">Select</div>
                         </div>
                     </div>
                     <div class="flip-back">
                         <h3> Grilled chicken Burger</h3>
-                        <p>Grilled chicken breast with lettuce, tomato,onion,cheese and creamy mayo.</p>
-                        <table class="nutrition">
-                            <tr><th>Calories</th><td>420</td></tr>
-                            <tr><th>Protein</th><td>20g</td></tr>
-                            <tr><th>Carbs</th><td>42g</td></tr>
-                        </table>
-                        <button class="add-cart-btn" onclick="addToCart('Chicken Burger', 400)">Add to Cart</button>
-                    </div>
+                            <p>Grilled chicken Patty,Tomato,Lettuce,mayo</p>
+     <select class="size-selector patty-select" onclick="event.stopPropagation()">
+        <option value="Single Patty" data-price="400">Single patty (Rs. 400)</option>
+        <option value="Double Patty" data-price="550">Double patty (Rs. 550)</option>
+    </select>
+
+    <p>Choose combo</p>
+    <select class="size-selector combo-select"onclick="event.stopPropagation()">
+        <option value="" data-price="0">Burger Only (+0)</option>
+        <option value="+Fries" data-price="150">Add Fries (+150)</option>
+        <option value="+Fries +Drink" data-price="220">Add Fries & Drink (+220)</option>
+    </select>
+
+   <button class="add-cart-btn" onclick="addBurgerToCart(this, 'Chicken Burger')">Add to Cart</button>
+</div>
                 </div>
             </div>
             <!-- Zinger Burger -->
             <div class="menu-item chicken">
                 <div class="flip-card" onclick="flipCard(this)">
                     <div class="flip-front">
-                        <img src="https://fillicafepk.com/wp-content/uploads/2023/12/zinger-burgerpsd-450x450.jpg" alt="Chicken Burger">
+                        <img src="https://fillicafepk.com/wp-content/uploads/2023/12/zinger-burgerpsd-450x450.jpg" alt="Zinger Burger">
                         <div class="item-info">
                             <h3> Zinger Burger</h3>
                             <p>Crispy fried chicken, lettuce,mayo</p>
-                            <div class="price">Rs.500</div>
+                            <div class="price">Select</div>
                         </div>
                     </div>
                     <div class="flip-back">
                         <h3> Zinger Burger</h3>
-                        <p>Crispy fried chicken with lettuce,cheese and creamy mayo.</p>
-                        <table class="nutrition">
-                            <tr><th>Calories</th><td>520</td></tr>
-                            <tr><th>Protein</th><td>30g</td></tr>
-                            <tr><th>Carbs</th><td>42g</td></tr>
-                        </table>
-                        <button class="add-cart-btn" onclick="addToCart('Zinger Burger', 500)">Add to Cart</button>
-                    </div>
+                           <p>Crispy Zinger Piece,Mayo,Lettuce</p>
+     <select class="size-selector patty-select" onclick="event.stopPropagation()">
+        <option value="Single Piece" data-price="500">Single Piece (Rs. 500)</option>
+        <option value="Double Piece" data-price="650">Double Piece (Rs. 650)</option>
+    </select>
+
+    <p>Choose combo</p>
+    <select class="size-selector combo-select"onclick="event.stopPropagation()">
+        <option value="" data-price="0">Burger Only (+0)</option>
+        <option value="+Fries" data-price="150">Add Fries (+150)</option>
+        <option value="+Fries +Drink" data-price="220">Add Fries & Drink (+220)</option>
+    </select>
+
+   <button class="add-cart-btn" onclick="addBurgerToCart(this, 'Zinger Burger')">Add to Cart</button>
+</div>
                 </div>
             </div>
-            
+            <!-- Nashtrill -->
+              <div class="menu-item chicken">
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-front">
+                        <img src="Pictures/nashthrill.webp" alt="Nashthrill Burger">
+                        <div class="item-info">
+                            <h3> Nashthrill Burger</h3>
+                            <p>Crispy fried chicken fillet, lettuce,Spicy mayo,Sour Pickles</p>
+                            <div class="price">Select</div>
+                        </div>
+                    </div>
+                    <div class="flip-back">
+                        <h3> Nashthrill Burger</h3>
+                           <p>Juicy Chick Fillet Burger Dipped in our Spicy Chilli Oil,Sweet & Sour Pickles and  Hot Pro Max Sauce</p>
+     <select class="size-selector patty-select" onclick="event.stopPropagation()">
+        <option value="Single Piece" data-price="500">Single Piece (Rs. 500)</option>
+        <option value="Double Piece" data-price="650">Double Piece (Rs. 650)</option>
+    </select>
+
+    <p>Choose combo</p>
+    <select class="size-selector combo-select"onclick="event.stopPropagation()">
+        <option value="" data-price="0">Burger Only (+0)</option>
+        <option value="+Fries" data-price="150">Add Fries (+150)</option>
+        <option value="+Fries +Drink" data-price="220">Add Fries & Drink (+220)</option>
+    </select>
+
+   <button class="add-cart-btn" onclick="addBurgerToCart(this, 'Nashthrill Burger')">Add to Cart</button>
+</div>
+                </div>
+            </div>
             <!-- BBQ Burger -->
             <div class="menu-item beef">
                 <div class="flip-card" onclick="flipCard(this)">
@@ -216,22 +304,118 @@
                         <div class="item-info">
                             <h3>BBQ Burger</h3>
                             <p>Beef,turkey bacon, BBQ sauce, onion rings</p>
-                            <div class="price">Rs900</div>
+                            <div class="price">Select</div>
                         </div>
                     </div>
                     <div class="flip-back">
                         <h3>BBQ Burger</h3>
                         <p>Angus beef with crispy turkey bacon, cheddar cheese, and homemade BBQ sauce.</p>
-                        <table class="nutrition">
-                            <tr><th>Calories</th><td>720</td></tr>
-                            <tr><th>Protein</th><td>60g</td></tr>
-                            <tr><th>Carbs</th><td>48g</td></tr>
-                        </table>
-                        <button class="add-cart-btn" onclick="addToCart('BBQ Burger', 900)">Add to Cart</button>
-                    </div>
+    <select class="size-selector patty-select" onclick="event.stopPropagation()">
+        <option value="Single Patty" data-price="800">Single patty (Rs. 800)</option>
+        <option value="Double Patty" data-price="1000">Double patty (Rs. 1000)</option>
+    </select>
+
+    <p>Choose combo</p>
+    <select class="size-selector combo-select"onclick="event.stopPropagation()">
+        <option value="" data-price="0">Burger Only (+0)</option>
+        <option value="+Fries" data-price="150">Add Fries (+150)</option>
+        <option value="+Fries +Drink" data-price="220">Add Fries & Drink (+220)</option>
+    </select>
+
+   <button class="add-cart-btn" onclick="addBurgerToCart(this, 'BBQ Burger')">Add to Cart</button>
+</div>
                 </div>
             </div>
-            
+            <!-- Shroom Smash -->
+             <div class="menu-item beef">
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-front">
+                        <img src="Pictures/Shroom smash.webp" alt="Shroom Smash">
+                        <div class="item-info">
+                            <h3>Shroom Smash</h3>
+                            <p>Beef,Creamy mushrooms,demi-glace sauce,melted cheese</p>
+                            <div class="price">Select</div>
+                        </div>
+                    </div>
+                    <div class="flip-back">
+                        <h3>Shroom Smash</h3>
+                        <p>Smashed beef loaded with buttery mushrooms, melted cheese, and our rich demi-glace sauce deep, creamy, and full of umami punch</p>
+    <select class="size-selector patty-select" onclick="event.stopPropagation()">
+        <option value="Single Patty" data-price="900">Single patty (Rs. 900)</option>
+        <option value="Double Patty" data-price="1100">Double patty (Rs. 1100)</option>
+    </select>
+
+    <p>Choose combo</p>
+    <select class="size-selector combo-select"onclick="event.stopPropagation()">
+        <option value="" data-price="0">Burger Only (+0)</option>
+        <option value="+Fries" data-price="150">Add Fries (+150)</option>
+        <option value="+Fries +Drink" data-price="220">Add Fries & Drink (+220)</option>
+    </select>
+
+   <button class="add-cart-btn" onclick="addBurgerToCart(this, 'Shroom Smash')">Add to Cart</button>
+</div>
+                </div>
+            </div>
+            <!-- Oklahoma -->
+            <div class="menu-item beef">
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-front">
+                        <img src="Pictures/Oklahoma.webp" alt="Oklahoma Burger">
+                        <div class="item-info">
+                            <h3>Oklahoma</h3>
+                            <p>Beef,Crispy Onions,signature sauce,melted cheese</p>
+                            <div class="price">Select</div>
+                        </div>
+                    </div>
+                    <div class="flip-back">
+                        <h3>Oklahoma</h3>
+                        <p>sliced onions smashed right on patty, Melteded cheese and signature sauce</p>
+    <select class="size-selector patty-select" onclick="event.stopPropagation()">
+        <option value="Single Patty" data-price="800">Single patty (Rs. 800)</option>
+        <option value="Double Patty" data-price="1000">Double patty (Rs. 1000)</option>
+    </select>
+
+    <p>Choose combo</p>
+    <select class="size-selector combo-select"onclick="event.stopPropagation()">
+        <option value="" data-price="0">Burger Only (+0)</option>
+        <option value="+Fries" data-price="150">Add Fries (+150)</option>
+        <option value="+Fries +Drink" data-price="220">Add Fries & Drink (+220)</option>
+    </select>
+
+   <button class="add-cart-btn" onclick="addBurgerToCart(this, 'Oklahoma')">Add to Cart</button>
+</div>
+                </div>
+            </div>
+            <!-- All American -->
+                       <div class="menu-item beef">
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-front">
+                        <img src="Pictures/All-American.webp" alt="All American">
+                        <div class="item-info">
+                            <h3>All American</h3>
+                            <p>Beef,Crispy Onions,Pickles,signature sauce,melted cheese</p>
+                            <div class="price">Select</div>
+                        </div>
+                    </div>
+                    <div class="flip-back">
+                        <h3>All American</h3>
+                        <p>Smashed Beef Patties With Shredded Pickles, Caramelized Onions, Cheese & Lab’s Secret Sauce In Soft-n-fresh Potato Buns.</p>
+    <select class="size-selector patty-select" onclick="event.stopPropagation()">
+        <option value="Single Patty" data-price="900">Single patty (Rs. 900)</option>
+        <option value="Double Patty" data-price="1100">Double patty (Rs. 1100)</option>
+    </select>
+
+    <p>Choose combo</p>
+    <select class="size-selector combo-select"onclick="event.stopPropagation()">
+        <option value="" data-price="0">Burger Only (+0)</option>
+        <option value="+Fries" data-price="150">Add Fries (+150)</option>
+        <option value="+Fries +Drink" data-price="220">Add Fries & Drink (+220)</option>
+    </select>
+
+   <button class="add-cart-btn" onclick="addBurgerToCart(this, 'All American')">Add to Cart</button>
+</div>
+                </div>
+            </div>
             <!-- French Fries -->
             <div class="menu-item sides">
                 <div class="flip-card" onclick="flipCard(this)">
@@ -253,35 +437,135 @@
         <option value="Large" data-price="400">Large - Rs. 400</option>
     </select>
 
-    <button class="add-cart-btn" onclick="addFriesToCart()">Add to Cart</button>
+    <button class="add-cart-btn" onclick="addItemToCart('friesSize', 'French Fries')">Add to Cart</button>
 </div>
         </div>
             </div>    
             <!-- Animal Loaded Fries -->
-            <div class="menu-item sides">
-                <div class="flip-card" onclick="flipCard(this)">
-                    <div class="flip-front">
-                        <img src="Pictures/Animal style fries.png" alt="Animal style Fries">
-                        <div class="item-info">
-                            <h3>Animal Loaded Fries</h3>
-                            <p>Crispy golden fries toppped with Chicken and sauce</p>
-                            <div class="price">Select Size</div>
-                        </div>
-                    </div>
-  <div class="flip-back">
-    <h3>Animal Fries</h3>
-    <p>Crispy golden fries seasoned with special spices topped with Chicken and Special Sauses.</p>
-    
-    <select id="AnimalfriesSize" class="size-selector" onclick="event.stopPropagation()">
-        <option value="Small" data-price="400">Small - Rs. 400</option>
-        <option value="Medium" data-price="500">Medium - Rs. 500</option>
-        <option value="Large" data-price="650">Large - Rs. 650</option>
-    </select>
-
-    <button class="add-cart-btn" onclick="addAnimalFriesToCart()">Add to Cart</button>
-</div>
+  <div class="menu-item sides">
+    <div class="flip-card" onclick="flipCard(this)">
+        <div class="flip-front">
+            <img src="Pictures/Animal style fries.png" alt="Animal Loaded Fries">
+            <div class="item-info">
+                <h3>Animal Loaded Fries</h3>
+                <p>Crispy golden fries toppped with Chicken and sauce</p>
+                <div class="price">Select Size</div>
+            </div>
         </div>
-            </div>    
+        <div class="flip-back">
+            <h3>Animal loaded Fries</h3>
+            <p>Crispy golden fries seasoned with special spices topped with Chicken and Special Sauses.</p>
+
+            <select id="AnimalFriesSize" class="size-selector" onclick="event.stopPropagation()">
+                <option value="Small" data-price="400">Small - Rs. 400</option>
+                <option value="Medium" data-price="500">Medium - Rs. 500</option>
+                <option value="Large" data-price="650">Large - Rs. 650</option>
+            </select>
+
+            <button class="add-cart-btn" onclick="addSidesToCart('AnimalFriesSize', 'Animal Fries')">Add to Cart</button>
+        </div>
+    </div>
+</div> 
+             <!--Shangai fries  -->
+<div class="menu-item sides">
+    <div class="flip-card" onclick="flipCard(this)">
+        <div class="flip-front">
+            <img src="Pictures/Shangai Fries.png" alt="Shangai style Fries">
+            <div class="item-info">
+                <h3>Shangai Fries</h3>
+                <p>Crispy golden fries toppped with Chicken and sauce</p>
+                <div class="price">Select Size</div>
+            </div>
+        </div>
+        <div class="flip-back">
+            <h3>Shangai Fries</h3>
+            <p>Crispy golden fries seasoned with special spices topped with Chicken and Special Sauses.</p>
+
+            <select id="ShanghaiFriesSize" class="size-selector" onclick="event.stopPropagation()">
+                <option value="Small" data-price="400">Small - Rs. 400</option>
+                <option value="Medium" data-price="500">Medium - Rs. 500</option>
+                <option value="Large" data-price="650">Large - Rs. 650</option>
+            </select>
+
+            <button class="add-cart-btn" onclick="addSidesToCart('ShanghaiFriesSize', 'Shangai Fries')">Add to Cart</button>
+        </div>
+    </div>
+</div>
+<!-- Chicago style fries -->
+<div class="menu-item sides">
+    <div class="flip-card" onclick="flipCard(this)">
+        <div class="flip-front">
+            <img src="Pictures/Chicago Fries.webp" alt="Chicago style Fries">
+            <div class="item-info">
+                <h3>Chicago Fries</h3>
+                <p>Crispy golden fries toppped with Chicken and sauce</p>
+                <div class="price">Select Size</div>
+            </div>
+        </div>
+        <div class="flip-back">
+            <h3>Chicago Fries</h3>
+            <p>Crispy golden fries seasoned with special spices topped with Chicken and Special Sauses.</p>
+
+            <select id="ChicagoFriesSize" class="size-selector" onclick="event.stopPropagation()">
+                <option value="Small" data-price="400">Small - Rs. 400</option>
+                <option value="Medium" data-price="500">Medium - Rs. 500</option>
+                <option value="Large" data-price="650">Large - Rs. 650</option>
+            </select>
+
+            <button class="add-cart-btn" onclick="addSidesToCart('ChicagoFriesSize', 'Chicago Fries')">Add to Cart</button>
+        </div>
+    </div>
+</div>
+<!--Tomatina Fries  -->
+<div class="menu-item sides">
+    <div class="flip-card" onclick="flipCard(this)">
+        <div class="flip-front">
+            <img src="Pictures/Tormatina Fries.png" alt="Tomatina style Fries">
+            <div class="item-info">
+                <h3>Tomatina Fries</h3>
+                <p>Crispy golden fries toppped with Chicken and sauce</p>
+                <div class="price">Select Size</div>
+            </div>
+        </div>
+        <div class="flip-back">
+            <h3>Tomatina Fries</h3>
+            <p>Crispy golden fries seasoned with special spices topped with Chicken and Special Sauses.</p>
+
+            <select id="TomatinaFriesSize" class="size-selector" onclick="event.stopPropagation()">
+                <option value="Small" data-price="400">Small - Rs. 400</option>
+                <option value="Medium" data-price="500">Medium - Rs. 500</option>
+                <option value="Large" data-price="650">Large - Rs. 650</option>
+            </select>
+
+            <button class="add-cart-btn" onclick="addSidesToCart('TomatinaFriesSize', 'Tomatina Fries')">Add to Cart</button>
+        </div>
+    </div>
+</div>
+<!-- Chicken tenders -->
+ <div class="menu-item sides">
+    <div class="flip-card" onclick="flipCard(this)">
+        <div class="flip-front">
+            <img src="Pictures/Chicken-tenders.webp" alt="Chicken Tenders">
+            <div class="item-info">
+                <h3>Chicken Tenders</h3>
+                <p>Crispy breaded chicken strips served with dip</p>
+                <div class="price">Select Quantity</div>
+            </div>
+        </div>
+        <div class="flip-back">
+            <h3>Chicken Tenders</h3>
+            <p>Golden fried chicken tenders. Juicy inside, crispy outside.</p>
+
+            <select id="TendersSize" class="size-selector" onclick="event.stopPropagation()">
+                <option value="3 pcs" data-price="450">3 Pieces - Rs. 450</option>
+                <option value="5 pcs" data-price="700">5 Pieces - Rs. 700</option>
+                <option value="Bucket" data-price="1200">Bucket (10 pcs) - Rs. 1200</option>
+            </select>
+
+            <button class="add-cart-btn" onclick="addSidesToCart('TendersSize', 'Chicken Tenders')">Add to Cart</button>
+        </div>
+    </div>
+</div>
             <!-- Soft Drink -->
 <div class="menu-item sides">
     <div class="flip-card" onclick="flipCard(this)">
@@ -312,7 +596,30 @@
             <button class="add-cart-btn" onclick="addCustomDrinkToCart()">Add to Cart</button>
         </div>
     </div> </div> 
+    <!-- Water -->
+<div class="menu-item sides">
+    <div class="flip-card" onclick="flipCard(this)">
+        <div class="flip-front">
+            <img src="Pictures/Water bottle" alt="Water">
+            <div class="item-info">
+                <h3>Water Bottle</h3>
+                <p>Refreshing Drink</p>
+                <div class="price">Select Size</div>
+            </div>
         </div>
+        <div class="flip-back">
+            <h3>Water Bottle</h3>
+            <p>Always Refreshing</p>
+            
+            <select class="size-selector" onclick="event.stopPropagation()">
+                <option value="Regular" data-price="100">Regular - Rs. 100</option>
+                <option value="1.5 Litre" data-price="150">1.5 Litre - Rs. 150</option>
+            </select>
+
+            <button class="add-cart-btn" onclick="addWaterToCart(event, this)">Add to Cart</button>
+        </div>
+    </div> 
+</div>
     </section>
  
         <!-- Shopping Cart -->

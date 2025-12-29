@@ -7,24 +7,25 @@
 }
 
 body {
-    background: #1a1a1a; /* Dark Charcoal */
-    color: white;
+    background: #f4f4f4; /* Light Gray Background */
+    color: #333333; /* Dark Text */
     line-height: 1.6;
 }
 
 /* Header */
 .header {
-    background: #000000; /* Pure Black Header */
+    background: #ffffff; /* White Header */
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #e67e22; /* ORANGE Line */
+    border-bottom: 2px solid #e67e22;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Subtle shadow */
 }
 
 .logo {
@@ -34,17 +35,17 @@ body {
 }
 
 .logo i {
-    color: #e67e22; /* ORANGE Icon */
+    color: #e67e22;
     font-size: 2em;
 }
 
 .logo h1 {
     font-size: 1.8em;
-    color: white;
+    color: #222; /* Dark Text */
 }
 
 .logo span {
-    color: #e67e22; /* ORANGE Text Accent */
+    color: #e67e22;
 }
 
 .navbar {
@@ -53,7 +54,7 @@ body {
 }
 
 .nav-btn {
-    color: white;
+    color: #333; /* Dark Text */
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -62,13 +63,13 @@ body {
 }
 
 .nav-btn:hover {
-    color: #e67e22; /* Text turns ORANGE on hover */
+    color: #e67e22;
     background: transparent; 
 }
 
 .order-btn {
-    background: #e67e22; /* ORANGE Button */
-    color: white; /* White text looks better on orange */
+    background: #e67e22;
+    color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -79,7 +80,7 @@ body {
 }
 
 .order-btn:hover {
-    background: #d35400; /* Darker ORANGE */
+    background: #d35400;
 }
 
 /* Sections */
@@ -93,7 +94,7 @@ body {
     text-align: center;
     font-size: 2.5em;
     margin-bottom: 40px;
-    color: #e67e22; /* ORANGE Title */
+    color: #e67e22;
 }
 
 /* Hero Section */
@@ -111,12 +112,12 @@ body {
 .hero-text h2 {
     font-size: 3em;
     margin-bottom: 20px;
-    color: white;
+    color: #222; /* Dark Text */
 }
 
 .hero-text p {
     font-size: 1.2em;
-    color: #ccc;
+    color: #555; /* Medium Gray */
     margin-bottom: 30px;
 }
 
@@ -127,21 +128,21 @@ body {
 .hero-image img {
     width: 100%;
     border-radius: 10px;
-    border: 3px solid #e67e22; /* ORANGE Border */
+    border: 3px solid #e67e22;
 }
 
 /* Discount Box */
 .discount-box {
-    background: rgba(230, 126, 34, 0.1); /* ORANGE tint background */
+    background: #fff3e0; /* Very Light Orange */
     border: 2px solid #e67e22;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 0 25px rgba(230, 126, 34, 0.5);
+    box-shadow: 0 5px 15px rgba(230, 126, 34, 0.2);
     margin-top: 30px;
 }
 
 .discount-box h3 {
-    color: #e67e22;
+    color: #d35400; /* Darker Orange for contrast */
     margin-bottom: 10px;
 }
 
@@ -152,23 +153,23 @@ body {
 }
 
 .time-box {
-    background: #000;
+    background: #ffffff;
     padding: 15px;
     border-radius: 5px;
     text-align: center;
     min-width: 80px;
-    border: 1px solid #333;
-    box-shadow: 0 0 25px rgba(230, 126, 34, 0.5);
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .time-box span {
     font-size: 2em;
-    color: #e67e22; /* ORANGE Numbers */
+    color: #e67e22;
     font-weight: bold;
 }
 
 .time-box small {
-    color: #ccc;
+    color: #666;
     display: block;
     margin-top: 5px;
 }
@@ -204,8 +205,8 @@ body {
 }
 
 .filter-btn {
-    background: #333;
-    color: white;
+    background: #ddd; /* Light Gray Button */
+    color: #333;
     border: none;
     padding: 10px 25px;
     border-radius: 5px;
@@ -251,12 +252,14 @@ body {
     backface-visibility: hidden;
     border-radius: 10px;
     overflow: hidden;
-    background: #222;
-    border: 2px solid #333;
+    background: #ffffff; /* White Card */
+    border: 1px solid #ddd; /* Light Border */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Card Shadow */
 }
 
 .flip-front:hover {
-    border-color: #e67e22; /* ORANGE Border on Hover */
+    border-color: #e67e22;
+    box-shadow: 0 5px 20px rgba(230, 126, 34, 0.3);
 }
 
 .flip-front img {
@@ -270,18 +273,18 @@ body {
 }
 
 .item-info h3 {
-    color: white;
+    color: #222; /* Dark Text */
     margin-bottom: 5px;
 }
 
 .item-info p {
-    color: #ccc;
+    color: #666;
     font-size: 0.9em;
     margin-bottom: 10px;
 }
 
 .price {
-    color: #e67e22; /* ORANGE Price */
+    color: #e67e22;
     font-size: 1.5em;
     font-weight: bold;
 }
@@ -290,6 +293,7 @@ body {
     padding: 20px;
     transform: rotateY(180deg);
     border-color: #e67e22;
+    background: #ffffff;
 }
 
 .flip-back h3 {
@@ -299,7 +303,7 @@ body {
 }
 
 .flip-back p {
-    color: #ccc;
+    color: #555;
     margin-bottom: 20px;
     line-height: 1.5;
 }
@@ -313,12 +317,12 @@ body {
 .nutrition th, .nutrition td {
     padding: 8px;
     text-align: left;
-    border-bottom: 1px solid #333;
-    color: #ccc;
+    border-bottom: 1px solid #eee;
+    color: #555;
 }
 
 .nutrition th {
-    color: #e67e22; /* ORANGE Headers */
+    color: #e67e22;
 }
 
 .add-cart-btn {
@@ -342,8 +346,8 @@ body {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    background: #333;
-    color: white;
+    background: #f9f9f9;
+    color: #333;
     border: 1px solid #e67e22;
     border-radius: 5px;
     cursor: pointer;
@@ -367,7 +371,7 @@ body {
 }
 
 .about-text p {
-    color: #ccc;
+    color: #555;
     margin-bottom: 20px;
     font-size: 1.1em;
 }
@@ -382,9 +386,10 @@ body {
 .feature {
     text-align: center;
     padding: 20px;
-    background: #222;
+    background: #ffffff;
     border-radius: 10px;
-    border: 1px solid #333;
+    border: 1px solid #eee;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .feature i {
@@ -394,12 +399,12 @@ body {
 }
 
 .feature h4 {
-    color: white;
+    color: #222;
     margin-bottom: 5px;
 }
 
 .feature p {
-    color: #ccc;
+    color: #666;
     font-size: 0.9em;
     margin: 0;
 }
@@ -412,7 +417,7 @@ body {
     width: 100%;
     border-radius: 10px;
     border: 3px solid #e67e22;
-    box-shadow: 0 0 25px rgba(230, 126, 34, 0.5);
+    box-shadow: 0 10px 25px rgba(230, 126, 34, 0.2);
 }
 
 /* Contact Section */
@@ -423,11 +428,11 @@ body {
 
 .contact-info {
     flex: 1;
-    background: #222;
+    background: #ffffff;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 25px rgba(230, 126, 34, 0.5);
-    border: 1px solid #e67e22;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
 }
 
 .contact-info h3 {
@@ -436,7 +441,7 @@ body {
 }
 
 .contact-info p {
-    color: #ccc;
+    color: #555;
     margin-bottom: 15px;
     display: flex;
     align-items: center;
@@ -450,11 +455,11 @@ body {
 
 .contact-form {
     flex: 1;
-    background: #222;
+    background: #ffffff;
     padding: 30px;
     border-radius: 10px;
-    border: 1px solid #e67e22;
-    box-shadow: 0 0 25px rgba(230, 126, 34, 0.5);
+    border: 1px solid #eee;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
 }
 
 .contact-form h3 {
@@ -467,10 +472,10 @@ body {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
-    background: #333;
-    border: 1px solid #444;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    color: white;
+    color: #333;
     font-size: 1em;
 }
 
@@ -478,7 +483,8 @@ body {
 .contact-form textarea:focus {
     outline: none;
     border-color: #e67e22;
-    box-shadow: 0 0 8px rgba(230, 126, 34, 0.5); /* Added glow for consistency */
+    background: #fff;
+    box-shadow: 0 0 8px rgba(230, 126, 34, 0.2);
 }
 
 .contact-form button {
@@ -504,12 +510,13 @@ body {
     right: -400px;
     width: 350px;
     height: 100vh;
-    background: #111;
+    background: #ffffff;
     border-left: 2px solid #e67e22;
     z-index: 1000;
     transition: right 0.3s ease;
     display: flex;
     flex-direction: column;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.1);
 }
 
 .cart-sidebar.show {
@@ -518,10 +525,11 @@ body {
 
 .cart-header {
     padding: 20px;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #eee;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: #f9f9f9;
 }
 
 .cart-header h3 {
@@ -531,7 +539,7 @@ body {
 .close-cart {
     background: none;
     border: none;
-    color: white;
+    color: #333;
     font-size: 2em;
     cursor: pointer;
 }
@@ -543,18 +551,18 @@ body {
 }
 
 .cart-item {
-    background: #222;
+    background: #f9f9f9;
     padding: 15px;
     border-radius: 5px;
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #333;
+    border: 1px solid #eee;
 }
 
 .cart-item h4 {
-    color: white;
+    color: #333;
     margin-bottom: 5px;
 }
 
@@ -570,8 +578,8 @@ body {
 }
 
 .cart-item-controls button {
-    background: #333;
-    color: white;
+    background: #ddd;
+    color: #333;
     border: none;
     width: 30px;
     height: 30px;
@@ -586,13 +594,14 @@ body {
 
 .empty-cart {
     text-align: center;
-    color: #666;
+    color: #999;
     padding: 40px 0;
 }
 
 .cart-footer {
     padding: 20px;
-    border-top: 1px solid #333;
+    border-top: 1px solid #eee;
+    background: #f9f9f9;
 }
 
 .cart-total {
@@ -601,7 +610,7 @@ body {
     align-items: center;
     margin-bottom: 20px;
     font-size: 1.2em;
-    color: white;
+    color: #333;
 }
 
 #totalPrice {
@@ -627,11 +636,11 @@ body {
 
 /* Footer */
 .footer {
-    background: #000;
+    background: #ffffff;
     padding: 30px;
     text-align: center;
     border-top: 2px solid #e67e22;
-    color: #ccc;
+    color: #666;
 }
 
 .footer p {

@@ -196,17 +196,66 @@ function sendMessage(event) {
 
 }
 
+// Add Burger to Cart
+function addBurgerToCart(buttonElement, burgerName) {
+    // 1. Find the specific card container the user clicked inside
+    const card = buttonElement.closest('.flip-back');
+
+    // 2. Find the dropdowns INSIDE that specific card by their class
+    // We will add these specific classes in the HTML step below
+    const pattySelect = card.querySelector('.patty-select');
+    const comboSelect = card.querySelector('.combo-select');
+
+    // 3. Get Values
+    const pattyVal = pattySelect.value;
+    const comboVal = comboSelect.value;
+
+    // 4. Get Prices (Base + Extra)
+    const basePrice = parseFloat(pattySelect.options[pattySelect.selectedIndex].getAttribute('data-price'));
+    const extraPrice = parseFloat(comboSelect.options[comboSelect.selectedIndex].getAttribute('data-price'));
+
+    // 5. Calculate Total
+    const finalPrice = basePrice + extraPrice;
+
+    // 6. Add to Cart
+    addToCart(`${burgerName} (${pattyVal} ${comboVal})`, finalPrice);
+}
 //  Add Fries to Cart 
 function addFriesToCart() {
     const selector = document.getElementById('friesSize');
     const selectedOption = selector.options[selector.selectedIndex];
     addToCart(`French Fries (${selector.value})`, parseFloat(selectedOption.getAttribute('data-price')));
 }
-// Add Animal Fries to Cart
-function addAnimalFriesToCart() {
-    const selection = document.getElementById('AnimalfriesSize');
-    const selectedOptions = selection.options[selection.selectedIndex];
-    addToCart(`Animal Loaded Fries (${selection.value})`, parseFloat(selectedOptions.getAttribute('data-price')));
+// Generic function for any item with a size selector
+function addsidesToCart(selectId, productName) {
+    const selection = document.getElementById(selectId);
+    const selectedOption = selection.options[selection.selectedIndex];
+    
+    const fullName = `${productName} (${selection.value})`;
+    const price = parseFloat(selectedOption.getAttribute('data-price'));
+
+    addToCart(fullName, price);
+}
+// add Water to cart
+function addWaterToCart(event, button) {
+    event.stopPropagation(); // Stop the card from flipping
+
+    // Find the container relative to the clicked button
+    const container = button.parentElement;
+    
+    // Select the size dropdown
+    const sizeSelect = container.querySelector('select');
+    
+    // Get value and price
+    const selectedOption = sizeSelect.options[sizeSelect.selectedIndex];
+    const size = selectedOption.value;
+    const price = parseFloat(selectedOption.getAttribute('data-price'));
+
+    // Create name string like: "Water Bottle (1.5 Litre)"
+    const itemName = `Water Bottle (${size})`;
+
+    // --- THIS LINE ADDS IT TO THE CART ---
+    addToCart(itemName, price); 
 }
 // Add Drinks to Cart
 function addCustomDrinkToCart() {

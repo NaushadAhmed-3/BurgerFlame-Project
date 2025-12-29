@@ -176,7 +176,7 @@ function checkout() {
     saveCart();
     
     // Redirect to the Order Details page
-    window.location.href = 'Details For Order.html';
+    window.location.href = 'checkout.html';
 }
 
 // Order now
